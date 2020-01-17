@@ -24,4 +24,27 @@ axios
 		console.log(response);
 	});
 
-const topCardContainer = document.querySelector('.cards-container');
+const topCardCont = document.querySelector('.cards-container');
+
+const primaryArt = Object.entered(response.data.articles);
+
+primaryArt
+	.forEach(subject => {
+		subject[1].forEach(data => {
+			const createCard = Content(data);
+			topCardCont.appendChild(createCard);
+		});
+	})
+
+	.catch(error => {
+		console.log(error, 'the data was not returned');
+	});
+
+function lambdaCard(data) {
+	const card = document.createElement('div');
+	const headline = document.createElement('div');
+	const author = document.createElement('div');
+	const imageCont = document.createElement('div');
+	const img = document.createElement('span');
+	const authorAlias = document.createElement('span');
+}
