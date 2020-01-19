@@ -30,5 +30,5 @@ axios
 		createTabs(response.data.topics);
 	})
 	.catch(e => {
-		console.log('ERROR!', e);
+		console.log('ERROR!', error);
 	});
